@@ -8,6 +8,6 @@ const {
 const { protect } = require("../middleware/authMiddleware");
 
 router.post("/", protect, createBlog);
-router.get("/", protect, getAllBlogs);
+router.get("/", getAllBlogs);
 
 module.exports = router;

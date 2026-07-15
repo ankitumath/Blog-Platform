@@ -11,6 +11,7 @@ import Profile from "./pages/Profile/Profile";
 import CreateBlog from "./pages/CreateBlog/CreateBlog";
 import EditBlog from "./pages/EditBlog/EditBlog";
 import BlogDetails from "./pages/BlogDetails/BlogDetails";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -22,10 +23,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/create-blog" element={<CreateBlog />} />
-          <Route path="/edit-blog/:id" element={<EditBlog />} />
+<Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>          <Route path="/profile" element={<Profile />} />
+<Route
+  path="/create-blog"
+  element={
+    <ProtectedRoute>
+      <CreateBlog />
+    </ProtectedRoute>
+  }
+/>          <Route path="/edit-blog/:id" element={<EditBlog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
         </Routes>
       </main>
