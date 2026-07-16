@@ -38,7 +38,16 @@ function App() {
       <CreateBlog />
     </ProtectedRoute>
   }
-/>          <Route path="/edit-blog/:id" element={<EditBlog />} />
+/> 
+<Route
+  path="/edit-blog/:id"
+  element={
+    <ProtectedRoute>
+      <EditBlog />
+    </ProtectedRoute>
+  }
+/>
+         <Route path="/edit-blog/:id" element={<EditBlog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
         </Routes>
       </main>
