@@ -35,3 +35,15 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://blog-platform-qv7y.onrender.com",
+    ],
+    credentials: true,
+  })
+);
+
+app.use(express.json());
