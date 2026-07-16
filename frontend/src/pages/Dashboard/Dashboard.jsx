@@ -28,7 +28,7 @@ const Dashboard = () => {
       <div className="flex justify-between items-center mb-8">
 
         <h1 className="text-4xl font-bold">
-          My Dashboard
+          My Blog Dashboard
         </h1>
 
         <Link
